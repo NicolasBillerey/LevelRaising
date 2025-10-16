@@ -10,7 +10,7 @@ Last update: Oct 16, 2025
 
 **Description of the files:**
 
-13-curveE.m: we define a Frey curve E/Q(sqrt(13)) (from the paper 'A multi-Frey approach to Fermat equations of signature (r,r,p)', TAMS 2019 by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas)
+* 13-curveE.m: we define a Frey curve E/Q(sqrt(13)) (from the paper 'A multi-Frey approach to Fermat equations of signature (r,r,p)', TAMS 2019 by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas)
 
 ModularSieve.m: we perform the unit sieve described in Section 2 using modular information coming from the Frey curve E.
 
