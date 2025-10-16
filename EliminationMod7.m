@@ -1,3 +1,7 @@
+/*
+We perform the elimination at level 2*3*Q13^2 using only mod 7 computations. This, together with the results from Section 5, proves Theorem 4.1.
+*/
+
 Q:=Rationals();
 Z:=Integers();
 
