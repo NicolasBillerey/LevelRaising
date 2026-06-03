@@ -20,7 +20,7 @@ Last update: Oct 16, 2025
 
 * Matrix.m: in this (heavy: 17.8 MB) file, we store a 2353 x 2353 matrix which gives the 'right' change of basis that guarantees that all computed F_7-eigensystems will appear with multiplicity one in the socle.
 
-* Certificate.m: this file is used to compute the F_7-eigensystems of forms of level 2*3*Q13^2 using the matrix provided in the file Matrix.m (~4 hours). (Note that it is important to set the seed because of Magma using random choices.)
+* Verifier.m: this file is used to compute the F_7-eigensystems of forms of level 2*3*Q13^2 using the matrix provided in the file Matrix.m (~4 hours). (Note that it is important to set the seed because of Magma using random choices.)
 
 * EliminationMod7.m: We perform the elimination at level 2*3*Q13^2 using only mod 7 computations. This, together with the results from Section 5, proves Theorem 4.1.
 
