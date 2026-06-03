@@ -22,7 +22,7 @@ Last update: Oct 16, 2025
 
 * Verifier.m: this file is used to compute the F_7-eigensystems of forms of level 2.3.Q13^2 using the matrix provided in the file Matrix.m (~4 hours). (Note that it is important to set the seed because of Magma using random choices.)
 
-* EliminationMod7.m: We perform the elimination at level 2*3*Q13^2 using only mod 7 computations. This, together with the results from Section 5, proves Theorem 4.1.
+* EliminationMod7.m: We perform the elimination at level 2.3.Q13^2 using only mod 7 computations. This, together with the results from Section 5, proves Theorem 4.1.
 
 * PubMatSection3.m: this file contains all computations in support of the assertions made in Section 3 of the paper 'Some extensions of the modular method and Fermat equations of signature (13,13,n)', Pub. Mat. (2023) by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas used in this paper.
 
