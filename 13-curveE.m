@@ -1,5 +1,5 @@
 /*
-We define the elliptic curve E/Q(sqrt(13)) from the paper
+We condider the elliptic curve E/Q(sqrt(13)) defined in the paper
 A multi-Frey approach to Fermat equations of signature (r,r,p), TAMS 2019
 by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas
 (see p. 8666 in the published version).

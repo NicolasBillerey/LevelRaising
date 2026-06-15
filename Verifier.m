@@ -1,5 +1,5 @@
 /*
-We compute the 43 F_7-eigensystems introduced in Section 4 using a basis provided by the matrix from the file Matrix.m.
+We compute the 43 F_7-eigensystems introduced in Section 5 using a basis provided by the matrix from the file Matrix.m.
 */
 
 

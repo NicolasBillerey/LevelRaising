@@ -1,5 +1,5 @@
 /*
-We perform the unit sieve in Section 2 of the paper.
+We perform the unit sieve in Section 3 of the paper.
 */
 
 

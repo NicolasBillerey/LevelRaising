@@ -1,9 +1,9 @@
 /*
-We check the computational assertions from Section 5 of the paper.
+We check the computational assertions from Section 6 of the paper.
 */
 
 
-SetClassGroupBounds("GRH"); // We assume GRH for the sake of speed but this computation can also be performed without in ??? minutes.
+SetClassGroupBounds("GRH"); // We assume GRH for the sake of speed but this computation can also be performed without this assumption.
 
 QQ := Rationals();
 PolsQ<x> := PolynomialRing(QQ);

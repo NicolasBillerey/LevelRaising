@@ -1,7 +1,7 @@
 /*
 We are in the case 4 | a + b and 13 does not divide a + b.
 We seek level raising primes combining information coming from both the unit sieve and the modular method.
-See Section 3 of the paper. 
+See Section 4 of the paper. 
 */
 
 load "13-curveE.m";
