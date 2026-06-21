@@ -24,7 +24,7 @@ Last update: June 21, 2026
 
 * ModularSieve.m: we perform the unit sieve described in Section 2 using modular information coming from the Frey curve E.
 
-* Precomputing_g.m: we precompute some coefficients "mod 7" of the remainging form g and store them in the file Coefficients_g.out (~12 minutes).
+* Precomputing_g.m: we precompute some coefficients "mod 7" of the remaining form g and store them in the file Coefficients_g.out (~12 minutes).
 
 * PubMatSection3.m: this file contains all computations in support of the assertions made in Section 3 of the paper 'Some extensions of the modular method and Fermat equations of signature (13,13,n)', Pub. Mat. (2023) by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas used in this paper.
 
