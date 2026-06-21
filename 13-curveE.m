@@ -6,6 +6,8 @@ by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas
 We also introduce useful fonctions for the elimination.
 */
 
+
+
 L<z>:=CyclotomicField(13); // Here z denotes a primitive 13-th root of unity
 OL:=Integers(L);
 UL,phi:=UnitGroup(OL); 
@@ -150,32 +152,45 @@ function BoundE(forms,AuxiliaryPrimes);
 	return "";
 end function;
 
+// This function returns the Fourier coefficient at a given prime ideal of the remaining form g (see Proposition 9 in the aforementioned paper)
+function TraceOfFrobenius_g(Coeffs,Q)
+    for i in [1..#Coeffs] do
+        if Q eq Coefficients_g[i][1][1] then
+            return Integers()!Coeffs[i][2];
+        end if;
+    end for;
+    return false;
+end function;
+
+
+
 // Given a prime q not congruent to 1 mod 13 (and hence of good reduction for E), this function returns the list of (the "bad") pairs (a,b) in {0,..., q-1} such that there is a congruence between the a_q-coefficients of E(a,b) and E(1,-1)
 function BadPairs(q);
     BadPairsQ:=[];
     assert q mod 13 ne 1;
     assert q notin [2,7,13];
     factQ:=Factorization(q*OF);
-    g:=FreyE(1,-1);
+    Z:=FreyE(1,-1);
     // By choice of q we are always in the case of good reduction
     // We collect the pairs (a,b) mod q of good reduction that are compatible with the mod 7 congruence
     for x,y in [0..q-1] do
         phixy:=x^12 - y*x^11 + y^2*x^10 - y^3*x^9 + y^4*x^8 - y^5*x^7 + y^6*x^6 - y^7*x^5 + y^8*x^4 - y^9*x^3 + y^10*x^2 - y^11*x + y^12;
         if (x le y) and [x,y] ne [0,0] then //and x+y in {3*t^7 : t in Integers(q)} and phixy in {t^7 : t in Integers(q)} then			
-            Bxy:=0;
+            BxyZ:=0;
+            Bxyg:=0;
             C:=FreyE(x,y);
             for i in [1..#factQ] do
                 Q:=factQ[i,1];
-                assert LocalInformation(C,Q)[3] eq 0; 
-                diffQ:=TraceOfFrobenius(C,Q) - TraceOfFrobenius(g,Q);
-                Bxy:=Gcd(Bxy,diffQ);
+                assert LocalInformation(C,Q)[3] eq 0;
+                BxyZ:=Gcd(BxyZ,TraceOfFrobenius(C,Q) - TraceOfFrobenius(Z,Q));
+                Bxyg:=Gcd(Bxyg,TraceOfFrobenius(C,Q) - TraceOfFrobenius_g(Coefficients_g,Q));
             end for;
-            if Valuation(Bxy,7) ne 0 then 
-                assert Valuation(Bxy,7) gt 0;
+            if Valuation(BxyZ*Bxyg,7) ne 0 then 
                 Append(~BadPairsQ,[x,y]); 
             end if; 
         end if;             		 
     end for;
     return BadPairsQ;
 end function;
+
 

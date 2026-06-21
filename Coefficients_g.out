@@ -1,0 +1,131 @@
+F<w>:=QuadraticField(13);
+OF := Integers(F);
+k := GF( 7 ,  1 );
+Coefficients_g := [];
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 5, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 5 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 11, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 6 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 17, 0 ],
+    [ 8, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 1 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 17, 0 ],
+    [ 7, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 4 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 19, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 4 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 23, 0 ],
+    [ 16, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 4 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 23, 0 ],
+    [ 5, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 5 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 29, 0 ],
+    [ 18, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 5 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 29, 0 ],
+    [ 9, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 0 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 37, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 1 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 41, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 6 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 43, 0 ],
+    [ 22, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 1 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 43, 0 ],
+    [ 19, 2 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 3 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ -7, 5 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 1 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 2, 5 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 4 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 83, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 6 *]);
+Q := ideal<OF | [q[1]*OF.1 + q[2]*OF.2 : q in [
+    [ 89, 0 ]
+]
+]>;
+_ := IsPrincipal(Q);
+_ := IsPrime(Q);
+Append(~Coefficients_g, [*<Q, 1 >, k! 1 *]);

@@ -2,15 +2,8 @@
 We perform the unit sieve in Section 3 of the paper.
 */
 
-
+load "Coefficients_g.out"; // loads the Fourier coefficients of g at the useful prime ideals.
 load "13-curveE.m";
-
-/*
-We have a mod \fp_7 congruence between E_{a,b} and the form g. 
-We know that g mod \fp_7 matches E_{1,-1} so to compute Traces of Frobenius of g mod \fp_7 we can work with g = E_{1,-1} mod 7.
-Note this fact is not used in the proof but we can use it here for the practical purpose of
-accelerating the calculations; in particular it avoids computing the space of forms where g lives and access to traces is faster.
-*/
 
 
 function Sieving(AuxiliaryPrimes,BadPairsAt2,bool13)
