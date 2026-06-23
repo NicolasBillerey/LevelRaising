@@ -4,9 +4,9 @@ Electronic resources for the paper 'Extensions to the modular method for small e
 
 The paper is available on <a href="https://arxiv.org/abs/2510.13773">arXiv</a>.
 
-We provide below a brief description of each of the Magma codes used in this work. All files run almost instantaneously unless indicated (and with one notable exception for the file Certificate.m which requires about 4 hours to terminate on a personal computer).
+We provide below a brief description of each of the Magma codes used in this work. All files run within a few minutes on a personal computer with one notable exception for the file Certificate.m which requires about 4 hours to terminate.
 
-Last update: June 21, 2026
+Last update: June 23, 2026
 
 **Description of the files:**
 
