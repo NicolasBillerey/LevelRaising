@@ -4,8 +4,7 @@ We seek level raising primes combining information coming from both the unit sie
 See Section 4 of the paper. 
 */
 
-load "Coefficients_g.out"; // loads the Fourier coefficients of g at the useful prime ideals.
-load "13-curveE.m";
+load "CurveE.m";
 
 
 

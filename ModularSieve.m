@@ -2,8 +2,7 @@
 We perform the unit sieve in Section 3 of the paper.
 */
 
-load "Coefficients_g.out"; // loads the Fourier coefficients of g at the useful prime ideals.
-load "13-curveE.m";
+load "CurveE.m";
 
 
 function Sieving(AuxiliaryPrimes,BadPairsAt2,bool13)
