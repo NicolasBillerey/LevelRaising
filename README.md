@@ -10,7 +10,7 @@ Last update: June 26, 2026
 
 **Description of the files:**
 
-* Avoiding_g.m: we show that when comparing traces of the Frey curve E mod 7 at prime ideals above q in {5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89}, one can restrict ourselves to the specific curve Z = E(1,-1) and forget about the form g.
+* Avoiding_g.m: we show that when comparing traces of the Frey curve E mod 7 at prime ideals above q in {5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89}, one can restrict ourselves to the specific curve Z = E(1,-1) and forget about the form g (~9 minutes).
 
 * CurveE.m: we define a Frey curve E/Q(sqrt(13)) (from the paper 'A multi-Frey approach to Fermat equations of signature (r,r,p)', TAMS 2019 by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas)
 
