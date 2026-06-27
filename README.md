@@ -6,7 +6,7 @@ The paper is available on <a href="https://arxiv.org/abs/2510.13773">arXiv</a>.
 
 We provide below a brief description of each of the Magma codes used in this work. All files run within a few minutes at most on a personal computer with one notable exception for the file Verifier.m which requires about 4 hours to terminate.
 
-Last update: June 26, 2026
+Last update: June 27, 2026
 
 **Description of the files:**
 
