@@ -23,7 +23,7 @@ time forms:=Eigenforms(NewSubspace(HilbertCuspForms(F,N)));
 print "...done!";
 print "There are",#forms,"newforms.\n";
 
-print "We consider the form g.";
+print "We consider the form g.\n";
 
 g:=forms[27];
 Qg<s>:=BaseField(g);
@@ -37,11 +37,12 @@ assert s+3 in p7;
 assert s+4 in p7prime;
 
 
-// We show that there is no congruence modulo p7 between g and the Frey curve E.
-p:=p7;
+print "We show that for P being one of the two prime ideals above 7, there is no congruence modulo P between g and the Frey curve E by comparing traces at primes dividing 17.\n";
+
 q:=17;
 factQ:=Factorisation(q*OF);
-val:=[];
+valp7:=[];
+valp7prime:=[];
 for x,y in [0..q-1] do
     if ([x,y] ne [0,0]) then
         //print "x, y:=", x, y;
@@ -50,22 +51,35 @@ for x,y in [0..q-1] do
             Q:=factQ[i,1];
             if LocalInformation(C,Q)[3] eq 0 then
                 // Here C has good reduction at Q
-                Append(~val,Valuation((TraceOfFrobenius(C,Q) - HeckeEigenvalue(g,Q))*Og,p));
+                Append(~valp7,Valuation((TraceOfFrobenius(C,Q) - HeckeEigenvalue(g,Q))*Og,p7));
+                Append(~valp7prime,Valuation((TraceOfFrobenius(C,Q) - HeckeEigenvalue(g,Q))*Og,p7prime));
+
             else
                 //print "Bad reduction";
-                Append(~val,Valuation(((Norm(Q)+1)^2 - HeckeEigenvalue(g,Q)^2)*Og,p));
+                Append(~valp7,Valuation(((Norm(Q)+1)^2 - HeckeEigenvalue(g,Q)^2)*Og,p7));
+                Append(~valp7prime,Valuation(((Norm(Q)+1)^2 - HeckeEigenvalue(g,Q)^2)*Og,p7prime));
             end if;
         end for;
     end if;
 end for;
-//print "q=",q,"val=", Set(val);
-assert Set(val) eq {0};
+assert (Set(valp7) eq {0}) or (Set(valp7prime) eq {0});
+// Hence for one of the two primes, there is no congruence between g and the Frey curve.
 
+if Set(valp7) eq {0} then
+    //print "No congruence modulo prime above 7 containing sqrt(2) + 3";
+    k,tok:=ResidueClassField(p7prime);
+else 
+    //print "No congruence modulo prime above 7 containing sqrt(2) + 4";
+    k,tok:=ResidueClassField(p7);
+end if;
 
-k,tok:=ResidueClassField(p7prime);
+print "Done!\n";
 
-// We finally verify that the a_Q coefficients of g modulo p7prime match those of Z = E(1,-1) modulo 7 for every prime ideal Q|q with q in [5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89]
+print "We finally verify that the a_Q coefficients of g modulo the other prime above 7 match those of Z = E(1,-1) modulo 7 for every prime ideal Q|q with q in [5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89].\n";
 
 assert {tok(HeckeEigenvalue(g,Q[1])) eq TraceOfFrobenius(Z,Q[1]) : Q in Factorization(q*OF), q in [5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89]} eq {true};
 
-// Therefore when comparing traces of Frobenius mod 7 of the Frey curve E at primes ideals above q in [5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89], one may consider only the Frey curve Z = E(1,-1) and not the modular form g as there Hecke eigenvalues coincide.
+
+print "Done!";
+
+// Therefore when comparing traces of Frobenius mod 7 of the Frey curve E at primes ideals above q in [5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89], one may consider only the Frey curve Z = E(1,-1) and not the modular form g as their Hecke eigenvalues coincide.
