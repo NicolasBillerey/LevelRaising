@@ -4,7 +4,6 @@ Some extensions of the modular method and Fermat equations of signature (13,13,n
 by N. Billerey, I. Chen, L. Dembélé, L. Dieulefait, and N. Freitas. 
 */
 
-SetClassGroupBounds("GRH"); // We assume GRH for the sake of speed but this computation can also be performed without in ??? minutes.
 
 QQ := Rationals();
 PolsQ<x> := PolynomialRing(QQ);
@@ -93,7 +92,7 @@ print "The trace of Frobenius at 5 of the elliptic curve W = 78a1 is",TraceOfFro
 print "\nWe check that for the forms no 8, 12, 13 and 14, there is a prime Q|5 such that the trace of Frobenius at Q is not (2 mod 7)";
 fact5:=[I[1] : I in Factorisation(5*OK)];
 for i in [8,12,13,14] do
-	Integers()!(Norm(HeckeEigenvalue(forms[i],fact5[1]) - 2)) mod 7 ne 0; 
+	Integers()!(Norm(HeckeEigenvalue(forms[i],fact5[1])) - 2) mod 7 ne 0; 
 end for;
 
 

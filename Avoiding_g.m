@@ -8,6 +8,8 @@ by N. Billerey, I. Chen, L. Dembébé, L. Dieulefait, and N. Freitas
 for a general result though.
 */
 
+
+
 load "CurveE.m";
 
 Z:=FreyE(1,-1);
@@ -32,7 +34,7 @@ Og:=Integers(Qg);
 p7,p7prime:=Explode([p[1] : p in Factorisation(7*Og)]);
 
 
-
+ // confirm Magma labelling of primes above 7
 assert s+3 in p7;
 assert s+4 in p7prime;
 

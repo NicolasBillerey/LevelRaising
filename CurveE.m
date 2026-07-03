@@ -1,5 +1,5 @@
 /*
-We condider the elliptic curve E/Q(sqrt(13)) defined in the paper
+We consider the elliptic curve E/Q(sqrt(13)) defined in the paper
 A multi-Frey approach to Fermat equations of signature (r,r,p), TAMS 2019
 by N. Billerey, I. Chen, L. Dieulefait, and N. Freitas
 (see p. 8666 in the published version).
@@ -78,7 +78,7 @@ function BadPairs(q);
     // We collect the pairs (a,b) mod q of good reduction that are compatible with the mod 7 congruence
     for x,y in [0..q-1] do
         phixy:=x^12 - y*x^11 + y^2*x^10 - y^3*x^9 + y^4*x^8 - y^5*x^7 + y^6*x^6 - y^7*x^5 + y^8*x^4 - y^9*x^3 + y^10*x^2 - y^11*x + y^12;
-        if (x le y) and [x,y] ne [0,0] then //and x+y in {3*t^7 : t in Integers(q)} and phixy in {t^7 : t in Integers(q)} then			
+        if (x le y) and [x,y] ne [0,0] then	
             Bxy:=0;
             C:=FreyE(x,y);
             for i in [1..#factQ] do
