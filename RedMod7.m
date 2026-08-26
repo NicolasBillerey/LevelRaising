@@ -25,7 +25,7 @@ print "...done!";
 
 
 forms3:=Eigenforms(NewSubspace(HilbertCuspForms(K,3*OK)));
-print "\nThe",#forms3,"newforms of level 3OK have been computed!";
+print "\nThe",#forms3,"newforms of level 3*OK have been computed!";
 for i in [1..#forms3] do
     f:=forms3[i];
     Qf:=BaseField(f);
@@ -34,11 +34,11 @@ for i in [1..#forms3] do
     for I in fact7 do 
         Q,toQ:=ResidueClassField(I[1]);
         if {toQ(HeckeEigenvalue(f,q) - (Norm(q)+1)) : q in Ps | Norm(q) notin [8,13,27]} eq {0} then 
-            print "One (possible) congruence prime mod 7 found for form no",i,"in level 3OK";
+            print "One (possible) congruence prime mod 7 found for form no",i,"in level 3*OK";
         end if;	
     end for;
 end for;
-print "\nAt level 3OK, there is a single pair (g,P) where P|7 and g has a mod P Eisenstein congruence.";
+print "\nAt level 3*OK, there is a single pair (g,P) where P|7 and g has a mod P Eisenstein congruence.";
 
 
 Qs:=[5, 31, 47, 53, 73, 79, 83]; // Primes < 100 which are (totally) split in K
@@ -61,8 +61,10 @@ for l in [2,3] do
     print "\nThe number of pairs (f,P) for f newform of level",l*13,"and P|7 in Q_f such that a_q(f) = 1 + q (mod P) for every prime q < 100 split in K is",#redPairs;
 end for;
 
-print "\nWe have proved the assertions in Proposition 5.1.";
+print "\nWe have proved the assertions in the of Proposition 6.1.\n\n";
 
+
+print "We now check the assertions in Corollary 6.3.";
 
 N0:=I2*I3*I13;
 print "\nComputing newforms at level N0 = 2*3*Q13...";
@@ -82,15 +84,15 @@ for i in [1..#forms] do
 		if {toQ(HeckeEigenvalue(f,q) - (Norm(q)+1)) : q in Ps | Norm(q) notin [8,13,27]} eq {0} then 
 			assert #Q eq 7;
 			Append(~redPairs,<i,Q,toQ>);
-			Append(~redPairsLevel,[toQ(HeckeEigenvalue(forms[i],q)) : q in Ps | Norm(q) in [8,13,27]]);
+			Append(~redPairsLevel,[<toQ(HeckeEigenvalue(forms[i],q)),Norm(q)> : q in Ps | Norm(q) in [8,27,13]]);
 		end if;	
 	end for;
 end for;
-print "\nWe check that there are five pairs (f,P) such that f has level N0 and satisfies an Eisenstein congruence modulo P|7...";
+print "\nWe redPairsLevelcheck that there are five pairs (f,P) such that f has level N0 and satisfies an Eisenstein congruence modulo P|7...";
 assert #redPairs eq 5;
 assert #redPairsLevel eq 5;
 print "...done!";
-print "\nThe reduction of the coefficients at the level of the pairs (f,p7) that are Eisenstein are (with multiplicity) :";
-{* f : f in redPairsLevel*};
+print "\nThe reduction of the coefficients at the prime ideals dividing the level of the pairs (f,p7) that are Eisenstein are displayed below with multiplicity, and the norm of the corresponding ideal (which are 8, 27, and 13):";
+{* c : c in redPairsLevel*};
 
-print "\nWe have proved the assertions in Corollary 5.3.";
+print "\nWe have proved the assertions in Corollary 6.3.";

@@ -4,6 +4,7 @@ Some extensions of the modular method and Fermat equations of signature (13,13,n
 by N. Billerey, I. Chen, L. Dembélé, L. Dieulefait, and N. Freitas. 
 */
 
+SetClassGroupBounds("GRH"); // We assume GRH for the sake of speed but this computation can also be performed without this assumption.
 
 QQ := Rationals();
 PolsQ<x> := PolynomialRing(QQ);
@@ -49,7 +50,7 @@ print "Note that for the last 3 forms in the table we do not include the generat
 
 for i in [6..15] do 
     print "+++++++++++++++++++++++++++++++++++++++";
-    print "form i = ", i;
+    print "form i =",i;
     Qf:= OptimizedRepresentation(BaseField(forms[i]));
     assert #(Subfields(Qf, n) where n:=Integers()!(Degree(Qf)/3)) eq 1;
     E<w> := OptimizedRepresentation(Subfields(Qf, n)[1][1]) where n := Integers()!(Degree(Qf)/3);
