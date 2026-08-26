@@ -68,6 +68,8 @@ end function;
 
 
 // Given a prime q not in {2, 13} and not congruent to 1 mod 13 (and hence of good reduction for E), this function returns the list of (the "bad") pairs (a,b) in {0,..., q-1} such that there is a mod 7 congruence between the a_Q-coefficients of E(a,b) and Z = E(1,-1)
+// Important remark: the function BadPairs below will be called in the files ModularSieve.m and LevelRaisingSieve.m where we apply it at primes q in {5, 11, 17, 19, 23, 29, 37, 41, 43, 61, 83, 89}. For those primes, we have verified in the file Avoiding_g.m that the reductions of the Hecke eigenvalues of the obstructing form g modulo (a suitable prime above) 7 match those of the traces of Frobenius of Z modulo 7. Therefore, in the function below we can avoid using g and only consider Z, hence making our code run faster.
+
 function BadPairs(q);
     BadPairsQ:=[];
     assert q mod 13 ne 1;
